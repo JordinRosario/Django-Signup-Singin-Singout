@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block titulo %} Iniciar sesion {%endblock%}
+
+{% block content %}
+    <form action="{% url 'iniciarsesion' %}" method="POST">
+        {% csrf_token %}
+        {{error}}
+        {{ iniciar_sesion_form.as_p }}
+        <button class="btn btn-outline btn-outline-secondary ms-auto">Iniciar sesion</button>
+    </form>
+
+{%endblock%}

@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block titulo %} Crear usuario{% endblock %}
+
+{% block content %} 
+
+<form action="{% url 'crearusuario' %}" method="POST">
+    {% csrf_token %}
+    {{ error }}
+    {{ crear_usuario_form.as_p}}
+    <input type="submit" name="" id="">
+</form>
+{% endblock%}
